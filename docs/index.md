@@ -1,6 +1,7 @@
 # OGSync: A CLI Organelle Genome Database Synchronizer
 
 ![GPL-3.0](https://img.shields.io/github/license/yiqingxu/OGSync) ![website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fyiqingxu.github.io%2FOGSync%2F)
+
 ![gnu](https://img.shields.io/badge/GNU-3-green?style=flat-square&logo=gnu) ![docker-compose](https://img.shields.io/badge/dockercompose-3-blue?style=flat-square&logo=docker) ![mongodb](https://img.shields.io/badge/mongo-4.4-green?style=flat-square&logo=mongodb)
 
 ![python](https://img.shields.io/badge/python-3-red?style=flat-square&logo=python) ![biopython](https://img.shields.io/pypi/status/biopython?label=biopython&style=flat-square) ![pymongo](https://img.shields.io/pypi/status/pymongo?label=pymongo&style=flat-square) ![progressbar](https://img.shields.io/pypi/status/progressbar?label=progressbar&style=flat-square) ![colorama](https://img.shields.io/pypi/status/colorama?label=colorama&style=flat-square)
