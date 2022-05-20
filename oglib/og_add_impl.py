@@ -45,12 +45,12 @@ def run_add_command(args):
     pbar = ProgressBar(widgets=widgets, maxval=total)
     if not args.debug:
         pbar.start()
-    
+
     # insert each into database
     for index,NCNumber in enumerate(add_list):
         id = oglib.og_def.get_refseq_id(NCNumber, data)
         down_str = download_from_NCBI(NCNumber, data, args.debug)
-        
+
         gb_str = down_str[0]
         add_genbank(id, gb_str, genbank, args.debug)
         cds_nucleotide_str = down_str[1]
@@ -62,7 +62,7 @@ def run_add_command(args):
             pbar.update( index+1 )
         else:
             print("**       %6d / %-6d        **"%(index+1,total))
-    
+
     if not args.debug:
         pbar.finish()
     else:
@@ -72,7 +72,7 @@ def download_from_NCBI(refseq, db_connector, if_show_debug=False):
     if if_show_debug:
         print("**********************************")
         print("Downloading "+refseq+" from NCBI")
-    
+
     # downlaod content from NCBI
     gi = oglib.og_def.get_gi_from_NC(refseq, if_show_debug)
     gb = oglib.og_def.get_genebank(refseq, if_show_debug)
@@ -121,7 +121,7 @@ def add_genbank(id, gb_str, db_connector, if_show_debug=False):
     # submit to database
     if db_connector.update_one(query, update).matched_count==0:
         db_connector.insert_one(insert)
-    
+
     add_features(id, db_connector, features, if_show_debug)
 
     if if_show_debug:
@@ -170,7 +170,7 @@ def add_CDS(id, cds_str, cds_type, db_connector, if_show_debug=False):
         ds = re.findall( r'\[(\S*)=(\S*)\]', seq_record.description )
         for d in ds:
             insert.update({d[0]: d[1]})
-        
+
         update = {"$set": insert}
 
         if db_connector.update_one(query, update).matched_count==0:

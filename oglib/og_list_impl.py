@@ -58,6 +58,6 @@ def run_list_command(args):
             print( tb.get_json_string() )
         else:
             print(tb)
-    
+
     if args.debug:
         print("Listing is done.")

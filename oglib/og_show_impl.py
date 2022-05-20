@@ -64,7 +64,7 @@ def run_show_command(args):
         return
     elif status==0 or status==2:
         return
-    
+
     #show_dict = getattr( import_module("oglib.og_def"), "get_%s_from_gb"%(args.type[0]) )(gb_str)
     show_dict = oglib.og_def.show_genbank(args.refSeq[0], genbank, args.type[0])
     if args.debug:

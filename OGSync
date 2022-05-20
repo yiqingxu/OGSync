@@ -27,18 +27,18 @@ class OGSync:
         if oglib.og_def.OG_SYNC_NAME not in dbs:
             print("OGSync is not initialized, please run 'OGSync init' to complete the basic setup.")
         parser = argparse.ArgumentParser(
-            description=self.description, 
-            prog=self.prog_full, 
+            description=self.description,
+            prog=self.prog_full,
             usage=self.usage, epilog=self.epilog )
         subparsers = parser.add_subparsers(prog=self.prog_full, title="avaiable commands")
-   
+
     def add_main_options(self):
-        """ Add Main Options for OGSync: -v/--version, and -h/--help 
+        """ Add Main Options for OGSync: -v/--version, and -h/--help
         """
         self.parser.add_argument('-v', '--version',
             action='version', version=self.prog_full+" "+oglib.og_def.OG_SYNC_VERSION,
             help="show "+self.prog_full+" version number and exit")
-    
+
     def add_subcommands(self):
         """ Use reflection to invoke subcommands
         """

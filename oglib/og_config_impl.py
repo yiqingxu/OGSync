@@ -21,20 +21,20 @@ For example, use these commands to get/set NCBI_API_KEY
     subparser.set_defaults(callback=run_config_command)
     subparser.add_argument('--get', choices=config_choices,
         help="get the config parameters")
-    subparser.add_argument('--set', type=json.loads, 
+    subparser.add_argument('--set', type=json.loads,
         help="set the config parameters")
     return subparser
 
 def run_config_command(args):
     ogsync_db = mongo_connector[oglib.og_def.OG_SYNC_NAME]
     config = ogsync_db[oglib.og_def.OG_SYNC_CONFIG_NAME]
-    
+
     # get a property from db
     if args.get in config_choices:
         print( config.find_one({"_id":1})['config'][args.get]  )
     # set a property into db
     elif args.set:
         if config.find_one({"_id":1}):
-            config.update_one({"_id": 1}, {"$set": {"config":args.set}} ) 
+            config.update_one({"_id": 1}, {"$set": {"config":args.set}} )
         else:
             config.insert_one({"_id":1, "config":args.set})

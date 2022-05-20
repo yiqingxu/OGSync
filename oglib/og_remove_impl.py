@@ -38,7 +38,7 @@ def run_remove_command(args):
     pbar = ProgressBar(widgets=widgets, maxval=total)
     if not args.debug:
         pbar.start()
-    
+
     # remove each from database
     for index,refseq in enumerate(remove_list):
         # construct the database operation
@@ -59,6 +59,6 @@ def run_remove_command(args):
             pbar.update( index+1 )
         else:
             print(refseq," has been removed from database, (%d/%d)."%(index+1,total))
-    
+
     if not args.debug:
         pbar.finish()

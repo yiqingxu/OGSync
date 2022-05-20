@@ -27,7 +27,7 @@ def run_init_command(args):
     ogsync_db = mongo_connector[oglib.og_def.OG_SYNC_NAME]
     if oglib.og_def.OG_SYNC_CONFIG_NAME not in ogsync_db.list_collection_names():
         print("OGSync_config is not configured, intializing...")
-    
+
     # create config is not exist
     config = ogsync_db[oglib.og_def.OG_SYNC_CONFIG_NAME]
     if config.find_one({"_id":0}):
@@ -35,7 +35,7 @@ def run_init_command(args):
     else:
         config.insert_one({"_id": 0, "version":oglib.og_def.OG_SYNC_VERSION})
         config.insert_one({"_id": 1, "config":{"NCBI_API_KEY":""}})
-    
+
     if oglib.og_def.OG_SYNC_DATA_NAME not in ogsync_db.list_collection_names():
         print("OGSync_data is empty, READY.")
     data = ogsync_db[oglib.og_def.OG_SYNC_DATA_NAME]
@@ -44,7 +44,7 @@ def run_init_command(args):
     else:
         data.insert_one({"_id": 0, "version":oglib.og_def.OG_SYNC_VERSION})
         data.create_index([('MD5', 1)])
-    
+
     if oglib.og_def.OG_SYNC_GENEBANK_NAME not in ogsync_db.list_collection_names():
         print("OGSync_genebank is empty, READY.")
     genebank = ogsync_db[oglib.og_def.OG_SYNC_GENEBANK_NAME]
@@ -52,7 +52,7 @@ def run_init_command(args):
         genebank.update_one({"_id": 0}, {"$set": {"version":oglib.og_def.OG_SYNC_VERSION} } )
     else:
         genebank.insert_one({"_id": 0, "version":oglib.og_def.OG_SYNC_VERSION})
-    
+
     if args.debug:
         print( str(config.find_one({"_id":0})) + " in "+oglib.og_def.OG_SYNC_CONFIG_NAME)
         print( str(data.find_one({"_id":0})) + " in "+oglib.og_def.OG_SYNC_DATA_NAME)

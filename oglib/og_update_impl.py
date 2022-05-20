@@ -67,7 +67,7 @@ def run_update_command(args):
     for index,row in enumerate(json.loads(data_json)):
         og_organism = {"og_type":"og_organism"}
         og_organism.update(row)
-        
+
         md5 = hashlib.md5(str(row).encode(encoding='utf-8')).hexdigest()
         og_organism["MD5"] = md5
 
@@ -84,12 +84,11 @@ def run_update_command(args):
             og_organism["latest"]="latest"
             og_organism["status"]="remote"
             data.insert_one(og_organism)
-        
+
         pbar.update( index )
     pbar.finish()
 
     print("OGSync is updated: "+str(update_counter)+" Oganelle Genomes are updated.")
-    
     if args.debug:
         print(remain_counter," were up-to-date and not modified.")
 
