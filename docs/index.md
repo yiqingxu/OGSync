@@ -16,7 +16,7 @@ OGSync is NOSQL-based, freely-available and user-friendly database which provide
 2. Start up the docker stack
 
     ``` sh
-    docker-compose up
+    docker-compose up -d --build
     ```
 
 3. Open termial and login OGSync container
@@ -65,6 +65,9 @@ After three-decade accumulation of high-throughput sequence data from various or
 
 The main module of the tool is implemented by the python and can be deployed by docker engine. Users can freely build their own database and easily manage organelle genome features such as nucleatide CDS, protein, sequence, annotations and etc.
 
+## Manual
+
+Please visit our [Manual](manual.md) page to see more.
 ## Reference
 
 1. NCBI Organelle Genome Resources, <https://ncbi.nlm.nih.gov/genome/organelle/>
