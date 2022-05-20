@@ -1,0 +1,71 @@
+version: '3.1'
+
+services:
+  ogsync:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: "ogsync:latest"
+    privileged: true
+    user: 'root'
+    tty: true
+    hostname: mst
+    container_name: ogsync
+    networks:
+      ogsync_netgroup:
+        ipv4_address: "192.168.11.10"
+    dns:
+    # change these dns servers' ip to enable the internet connection
+      - 114.114.114.114
+      - 8.8.8.8
+    depends_on:
+      - mongo
+      - mongo-express
+    volumes:
+      - .:/opt/OGSync
+    extra_hosts:
+      - "mongo:192.168.11.11"
+      - "mongo-express:192.168.11.12"
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+    # local port for mongo server
+      - 52032:27017
+    volumes:
+      - mongoVolume:/data/db
+    networks:
+      ogsync_netgroup:
+        ipv4_address: "192.168.11.11"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: OGSync
+      MONGO_INITDB_ROOT_PASSWORD: OGSyncDocker
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+    # local port for web-based mongo client
+      - 52031:8081
+    networks:
+      ogsync_netgroup:
+        ipv4_address: "192.168.11.12"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: OGSync
+      ME_CONFIG_MONGODB_ADMINPASSWORD: OGSyncDocker
+      ME_CONFIG_MONGODB_URL: mongodb://OGSync:OGSyncDocker@mongo:27017/
+
+networks:
+  ogsync_netgroup:
+      ipam:
+        config:
+        - subnet: 192.168.11.0/16
+
+volumes:
+# check https://docs.docker.com/storage/volumes/ to see how to manage docker volume
+  mongoVolume:

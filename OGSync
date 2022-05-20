@@ -1,0 +1,70 @@
+#!/usr/bin/python3
+#-*- coding: UTF-8 -*-
+
+import argparse, sys
+import oglib.og_def
+
+from oglib.og_mongo import mongo_connector
+from importlib import import_module
+
+class OGSync:
+    """ OGSync Main Class
+    """
+    prog_full=oglib.og_def.OG_SYNC_NAME
+    description=oglib.og_def.OG_SYNC_NAME+' is an Organelle Genome Synchronizor to manage a local dataset for easy-access to NCBI Organelle Database'
+    epilog = "Cite this: "+oglib.og_def.OG_SYNC_CITE
+    usage=oglib.og_def.OG_SYNC_NAME+' COMMAND [options]'
+    parser = argparse.ArgumentParser()
+    subparsers = parser.add_subparsers(prog=prog_full, title="avaiable commands")
+
+    subcommands = ["home", "init", "add", "remove", "update", "config", "list", "show" ]
+
+    def __init__(self):
+        """init OGSync Object
+        """
+        # check database
+        dbs = mongo_connector.list_database_names()
+        if oglib.og_def.OG_SYNC_NAME not in dbs:
+            print("OGSync is not initialized, please run 'OGSync init' to complete the basic setup.")
+        parser = argparse.ArgumentParser(
+            description=self.description, 
+            prog=self.prog_full, 
+            usage=self.usage, epilog=self.epilog )
+        subparsers = parser.add_subparsers(prog=self.prog_full, title="avaiable commands")
+   
+    def add_main_options(self):
+        """ Add Main Options for OGSync: -v/--version, and -h/--help 
+        """
+        self.parser.add_argument('-v', '--version',
+            action='version', version=self.prog_full+" "+oglib.og_def.OG_SYNC_VERSION,
+            help="show "+self.prog_full+" version number and exit")
+    
+    def add_subcommands(self):
+        """ Use reflection to invoke subcommands
+        """
+        for subcommand in self.subcommands:
+            add_subparser = getattr(import_module("oglib.og_"+subcommand+"_impl"), "add_"+subcommand+"_command")
+            subparser = add_subparser(self.subparsers)
+            subparser.add_argument('--debug',
+                default=False, action='store_true',
+            help="display debug info, for developers only")
+
+    def parse_args(self):
+        """ Parse the args from the system.
+        """
+        args = self.parser.parse_args()
+
+        if vars(args):
+            if args.debug:
+                print("DEBUG MODE is set ON by options: " +str(vars(args)) )
+            args.callback(args)
+        else:
+            self.parser.print_help()
+            ogsync = OGSync()
+            sys.exit(0)
+
+if __name__ == '__main__':
+    ogsync = OGSync()
+    ogsync.add_main_options()
+    ogsync.add_subcommands()
+    ogsync.parse_args()
