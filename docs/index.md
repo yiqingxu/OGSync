@@ -59,7 +59,7 @@ After three-decade accumulation of high-throughput sequence data from various or
 
 ## Architecture
 
-![architecture](https://raw.githubusercontent.com/yiqingxu/OGSync/main/img/OGSync.svg)
+![architecture](https://raw.githubusercontent.com/yiqingxu/OGSync/main/img/OGSync.png)
 
 
 The main module of the tool is implemented by the python and can be deployed by docker engine. Users can freely build their own database and easily manage organelle genome features such as nucleatide CDS, protein, sequence, annotations and etc.
