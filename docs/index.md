@@ -3,7 +3,7 @@
 ![gnu](https://img.shields.io/badge/GNU-3-green?style=flat-square&logo=gnu)
 ![docker-compose](https://img.shields.io/badge/dockercompose-3-blue?style=flat-square&logo=docker)
 ![python](https://img.shields.io/badge/python-3-red?style=flat-square&logo=python)
-![python](https://img.shields.io/badge/python-3-red?style=flat-square&logo=python)
+![mongodb](https://img.shields.io/badge/mongo-4.4-green?style=flat-square&logo=mongodb)
 
 OGSync is NOSQL-based, freely-available and user-friendly database which provides a command-line-interface platform for bioinformatics researchers to manage a local database to synchronize and analysis multiple complete genome sequences, gene sequences and feature annotations of species. Currently, this toolkit provides the function of managing local database, synchronizing data with NCBI Organelle Genome database, and a tree viewer of gene sequences and feature records in the database. High availability of distributed file system interface, extensive data analysis of feature records from GenBank files, visually human view and json-based data interface makes OGSync a valuable data management system for studies in organelle genomics.
 
@@ -59,7 +59,8 @@ After three-decade accumulation of high-throughput sequence data from various or
 
 ## Architecture
 
-![architecture](img/OGSync.svg)
+![architecture](https://raw.githubusercontent.com/yiqingxu/OGSync/main/img/OGSync.svg)
+
 
 The main module of the tool is implemented by the python and can be deployed by docker engine. Users can freely build their own database and easily manage organelle genome features such as nucleatide CDS, protein, sequence, annotations and etc.
 
