@@ -12,8 +12,9 @@ OGSync is NOSQL-based, freely-available and user-friendly database which provide
 
 ## Quick Start
 
-1. Download the repo and unzip
-2. Start up the docker stack
+0. Ensure a [docker](https://www.docker.com/) engine is installed (see [Get Docker](https://docs.docker.com/get-docker/)), which supports [docekr-compose](https://docs.docker.com/engine/reference/commandline/compose/) utilities.
+1. Download the repo and unzip.
+2. Start up the docker stack.
 
     ``` sh
     docker-compose up -d --build
@@ -49,7 +50,14 @@ OGSync is NOSQL-based, freely-available and user-friendly database which provide
     OGSync add NC_000932.1
     ```
 
-8. Try more command to manage your local database and sync.
+8. Try `show` command to display the tree view of the gemonic info, or use `-j` argument to obtain an api-friendly response.
+
+    ``` sh
+    OGSync show NC_000932.1 annotation
+    OGSync show NC_000932.1 annotation -j
+    ```
+
+9.  Try more command to manage your local database and sync.
 
     ``` sh
     OGSync --help
