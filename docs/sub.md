@@ -57,6 +57,7 @@ OGSync update [options]
 | `-h`, `--help` | show this help message and exit |
 | `-d`, `--show-diff` | if show the diffence of the genome list between current and latest, False by default |
 | `--debug` | display debug info, for developers only |
+
 ### source
 [oglib/og_update_impl.py](https://github.com/yiqingxu/OGSync/blob/main/oglib/og__impl.py)
 
