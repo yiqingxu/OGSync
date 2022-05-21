@@ -20,7 +20,7 @@ def add_show_command(subparsers):
         usage='OGSync show refSeq infoType [options]',
         description='''
 Show Organelle Genomes in the local database into tree view.
-Currently, it has three type:
+Currently, it has four type:
 general: show the general information of the genome, such as name, id, description and etc.
 sequence: show the nucleatide sequence of the genome.
 annotations: show the annotations of the genome, such as molecule_type, taxonomy, source and etc.
