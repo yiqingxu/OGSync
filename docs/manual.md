@@ -52,14 +52,14 @@ Currently, OGSync provides 8 sub commands:
 
 |  Sub command   | Description  |
 |  ----  | ----  |
-| [home](sub.md#home) |Display OGSync Homepage info and exit |
-| [init](sub.md#init) | Initialize the local OGSync database |
-| [add](sub.md#add) | Add Organelle Genomes into local database and sync with NCBI |
-| [remove](sub.md#remove) | Remove Organelle Genomes from local database |
-| [update](sub.md#update) | Sync the local OGSync list with NCBI Organelle Genome database |
-| [config](sub.md#config) | Configurate and customize OGSync |
-| [list](sub.md#list) | List Organelle Genomes in local/remote database |
-| [show](sub.md#show) | Show detailed info of Organelle Genomes in the local database |
+| [home](sub.md#ogsync-home) |Display OGSync Homepage info and exit |
+| [init](sub.md#ogsync-init) | Initialize the local OGSync database |
+| [add](sub.md#ogsync-add) | Add Organelle Genomes into local database and sync with NCBI |
+| [remove](sub.md#ogsync-remove) | Remove Organelle Genomes from local database |
+| [update](sub.md#ogsync-update) | Sync the local OGSync list with NCBI Organelle Genome database |
+| [config](sub.md#ogsync-config) | Configurate and customize OGSync |
+| [list](sub.md#ogsync-list) | List Organelle Genomes in local/remote database |
+| [show](sub.md#ogsync-show) | Show detailed info of Organelle Genomes in the local database |
 
 ## For Developers
 
