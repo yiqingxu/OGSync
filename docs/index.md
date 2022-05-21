@@ -20,10 +20,6 @@ After three-decade accumulation of high-throughput sequence data from various or
 
 The main module of the tool is implemented by the python and can be deployed by docker engine. Users can freely build their own database and easily manage organelle genome features such as nucleotide CDS, protein, sequence, annotations and etc.
 
-## Manual
-
-Please visit our [Manual](manual.md) page to see more.
-
 ## Quick Start with Docker Stack
 
 0. Ensure a [docker](https://www.docker.com/) engine is installed (see [Get Docker](https://docs.docker.com/get-docker/)), which supports [docekr-compose](https://docs.docker.com/engine/reference/commandline/compose/) utilities.
@@ -96,6 +92,8 @@ Please visit our [Manual](manual.md) page to see more.
     ```sh
     OGSync init --debug
     ```
+
+Please visit our [OGSync Documentation](manual.md) page to see more.
 
 ## Reference
 
