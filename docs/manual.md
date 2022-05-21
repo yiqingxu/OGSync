@@ -6,7 +6,7 @@
 
 ![python](https://img.shields.io/badge/python-3-red?style=flat-square&logo=python) ![biopython](https://img.shields.io/pypi/status/biopython?label=biopython&style=flat-square) ![pymongo](https://img.shields.io/pypi/status/pymongo?label=pymongo&style=flat-square) ![progressbar](https://img.shields.io/pypi/status/progressbar?label=progressbar&style=flat-square) ![colorama](https://img.shields.io/pypi/status/colorama?label=colorama&style=flat-square)
 
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/yiqingxu/OGSync) ![GitHub release (release name instead of tag name)](https://img.shields.io/github/v/release/yiqingxu/OGSync?display_name=release&include_prereleases) ![siz](https://img.shields.io/github/languages/code-size/yiqingxu/OGSync) ![repo](https://img.shields.io/github/repo-size/yiqingxu/OGSync)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/yiqingxu/OGSync) ![GitHub release (release name instead of tag name)](https://img.shields.io/github/v/release/yiqingxu/OGSync?display_name=release&include_prereleases) ![siz](https://img.shields.io/github/languages/code-size/yiqingxu/OGSync) ![repo](https://img.shields.io/github/repo-size/yiqingxu/OGSync) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/yiqingxu/ogsync)
 
 ## How to use
 
