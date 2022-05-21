@@ -232,7 +232,7 @@ def show_genbank(refseq, db_connector, info_type):
 
     print(info_type)
     trans={
-        'general': "GenBank Info", 
+        'general': "GenBank Info",
         'annotations': "Annotations",
         'features': "Features",
         'sequence': "Sequence"

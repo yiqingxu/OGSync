@@ -10,6 +10,6 @@ def add_home_command(subparsers):
     return subparser
 
 def run_home_command(args):
-    print('*************************************************')
-    print('Please visit https://dvb.ac.cn/OGSync for detail.')
-    print('*************************************************')
+    print('***********************************************************')
+    print('Please visit https://yiqingxu.github.io/OGSync/ for detail.')
+    print('***********************************************************')
