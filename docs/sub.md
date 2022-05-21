@@ -38,6 +38,7 @@ OGSync init [option]
 | `--debug` | display debug info, for developers only |
 
 ### source
+
 [oglib/og_init_impl.py](https://github.com/yiqingxu/OGSync/blob/main/oglib/og_init_impl.py)
 
 ---
@@ -55,10 +56,11 @@ OGSync update [options]
 | argument | description |
 | --- | --- |
 | `-h`, `--help` | show this help message and exit |
-| `-d`, `--show-diff` | if show the diffence of the genome list between current and latest, False by default |
+| `-d`, `--show-diff` | if show the difference of the genome list between current and latest, False by default |
 | `--debug` | display debug info, for developers only |
 
 ### source
+
 [oglib/og_update_impl.py](https://github.com/yiqingxu/OGSync/blob/main/oglib/og__impl.py)
 
 ---
@@ -91,6 +93,7 @@ OGSync config [options]
 > Use `OGSync config --set '{"NCBI_API_KEY"}':"xxx"'` to set config value
 
 ### source
+
 [oglib/og_config_impl.py](https://github.com/yiqingxu/OGSync/blob/main/oglib/og_config_impl.py)
 
 ---
@@ -107,12 +110,13 @@ OGSync add refSeq1[,refSeq2,...] [options]
 
 | argument | description |
 | --- | --- |
-| `refSeq` | **REQUIRED**. the refSeq code of the Organcelle Genome in the database, NCNumber or INSDC. |
+| `refSeq` | **REQUIRED**. the refSeq code of the Organelle Genome in the database, NCNumber or INSDC. |
 | `-h`, `--help` | show this help message and exit |
 | `-f`, `--force-upgrade` | if force to upgrade the local data, False by default |
 | `--debug` | display debug info, for developers only |
 
 ### source
+
 [oglib/og_add_impl.py](https://github.com/yiqingxu/OGSync/blob/main/oglib/og_add_impl.py)
 
 ---
@@ -129,7 +133,7 @@ OGSync remove refSeq1[,refSeq2,...] [options]
 
 | argument | description |
 | --- | --- |
-| `refSeq` | **REQUIRED**. the refSeq code of the Organcelle Genome in the database, NCNumber or INSDC. |
+| `refSeq` | **REQUIRED**. the refSeq code of the Organelle Genome in the database, NCNumber or INSDC. |
 | `-h`, `--help` | show this help message and exit |
 | `--debug` | display debug info, for developers only |
 
@@ -175,20 +179,18 @@ Currently, OGSync provides four types
 | general | show the general information of the genome, such as name, id, description and etc. |
 | sequence | show the nucleatide sequence of the genome. |
 | annotations | show the annotations of the genome, such as molecule_type, taxonomy, source and etc. |
-| features | show the features of the genome, including the qualifer info. |
-
+| features | show the features of the genome, including the qualifier info. |
 
 ### arguments
 
 | argument | description |
 | --- | --- |
-| `refSeq` | **REQUIRED**. the refSeq code of the Organcelle Genome in the database, NCNumber or INSDC. |
+| `refSeq` | **REQUIRED**. the refSeq code of the Organelle Genome in the database, NCNumber or INSDC. |
 | `infoType` | **REQUIRED**. the type of info to show.
 | `-h`, `--help` | show this help message and exit |
 | `-j`, `--output-json` | Output in json format, False by default|
 | `--debug` | display debug info, for developers only |
 
-
-
 ### source
+
 [oglib/og_show_impl.py](https://github.com/yiqingxu/OGSync/blob/main/oglib/og_show_impl.py)

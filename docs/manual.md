@@ -39,6 +39,7 @@ avaiable commands:
 ```
 
 ### Check OGSync Version
+
 Use `OGSync -v` or `OGSync --version` to see the version info.
 
 ``` sh
@@ -64,7 +65,8 @@ Currently, OGSync provides 8 sub commands:
 ## For Developers
 
 ### Trouble Shooting
-OGSync provide `-d`/`--debug` option as a global argument, and it turns on a verbose log for trouble-shooting.
+
+OGSync provide `-d`/`--debug` option as a global argument, and it turns on a verbose log for troubleshooting.
 
 For example, when use `update` sub command, it will display a progress bar while updating, such as:
 
@@ -90,6 +92,7 @@ OGSync is updated: 0 Oganelle Genomes are updated.
 ```
 
 ### OGSync API
+
 Developers can use `OGSync` as a service by adding `-j`/`--json` argument.
 
 For example, when use `show` sub command, it will display a tree view in terminal, such as:

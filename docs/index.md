@@ -20,7 +20,7 @@ OGSync is NOSQL-based, freely-available and user-friendly database which provide
     docker-compose up -d --build
     ```
 
-3. Open termial and login OGSync container
+3. Open terminal and login OGSync container
 
     ``` sh
     docker exec -it ogsync /bin/bash
@@ -38,7 +38,7 @@ OGSync is NOSQL-based, freely-available and user-friendly database which provide
     OGSync update
     ```
 
-6. List all avaiable refSeq, use `-r` to display the `remote` genome code
+6. List all available refSeq, use `-r` to display the `remote` genome code
 
     ``` sh
     OGSync list -r
@@ -50,7 +50,7 @@ OGSync is NOSQL-based, freely-available and user-friendly database which provide
     OGSync add NC_000932.1
     ```
 
-8. Try `show` command to display the tree view of the gemonic info, or use `-j` argument to obtain an api-friendly response.
+8. Try `show` command to display the tree view of the genomic info, or use `-j` argument to obtain an api-friendly response.
 
     ``` sh
     OGSync show NC_000932.1 annotation
@@ -71,7 +71,7 @@ After three-decade accumulation of high-throughput sequence data from various or
 
 ![architecture](https://raw.githubusercontent.com/yiqingxu/OGSync/main/img/OGSync.png)
 
-The main module of the tool is implemented by the python and can be deployed by docker engine. Users can freely build their own database and easily manage organelle genome features such as nucleatide CDS, protein, sequence, annotations and etc.
+The main module of the tool is implemented by the python and can be deployed by docker engine. Users can freely build their own database and easily manage organelle genome features such as nucleotide CDS, protein, sequence, annotations and etc.
 
 ## Manual
 
