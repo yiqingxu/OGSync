@@ -93,6 +93,8 @@ The main module of the tool is implemented by the python and can be deployed by 
     OGSync init --debug
     ```
 
+## Documentation
+
 Please visit our [OGSync Documentation](manual.md) page to see more.
 
 ## Reference
