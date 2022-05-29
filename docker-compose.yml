@@ -22,7 +22,8 @@ services:
       - mongo
       - mongo-express
     volumes:
-      - .:/opt/OGSync
+    # remove volumes if no local source is needed
+      - .:/opt/OGSync/src
     extra_hosts:
       - "mongo:192.168.11.11"
       - "mongo-express:192.168.11.12"
