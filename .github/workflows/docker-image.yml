@@ -22,4 +22,6 @@ jobs:
     - name: Build the Docker image
       run: 
         docker build --file dockerfile --tag ${{ secrets.DOCKER_HUB_USERNAME }}/ogsync:latest .
+    - name: Push the docker image
+      run:
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/ogsync:latest
