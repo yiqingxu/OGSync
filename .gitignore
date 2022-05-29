@@ -133,3 +133,4 @@ dmypy.json
 
 mongo/*
 oglib/og_test*.py
+.vscode

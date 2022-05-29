@@ -48,8 +48,8 @@ def run_add_command(args):
 
     # insert each into database
     for index,NCNumber in enumerate(add_list):
-        id = oglib.og_def.get_refseq_id(NCNumber, data)
         down_str = download_from_NCBI(NCNumber, data, args.debug)
+        id = oglib.og_def.get_refseq_id(NCNumber, data)
 
         gb_str = down_str[0]
         add_genbank(id, gb_str, genbank, args.debug)
