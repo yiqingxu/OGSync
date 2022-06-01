@@ -1,4 +1,4 @@
-name: Demo Push
+name: ghcr
 
 on:   
   push:
